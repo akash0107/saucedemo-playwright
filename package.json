@@ -1,0 +1,35 @@
+{
+  "name": "saucedemo_practice",
+  "version": "1.0.0",
+  "description": "Playwright end-to-end tests for saucedemo.com using the Page Object Model, with Allure reporting",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "report": "npx playwright show-report",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "allure": "npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "testing",
+    "page-object-model",
+    "allure"
+  ],
+  "author": "Akash Debnath",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akash0107/saucedemo-playwright.git"
+  }
+}
