@@ -16,6 +16,12 @@ jobs:
       run: npm ci
     - name: Run Playwright tests
       run: npm test
+    # Allure CLI needs Java, which the Playwright image doesn't ship with
+    - uses: actions/setup-java@v4
+      if: ${{ !cancelled() }}
+      with:
+        distribution: temurin
+        java-version: '21'
     - name: Generate Allure report
       if: ${{ !cancelled() }}
       run: npm run allure:generate
